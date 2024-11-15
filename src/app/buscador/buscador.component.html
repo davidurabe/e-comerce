@@ -1,0 +1,25 @@
+<div>
+    <!-- Input de búsqueda -->
+    <input type="text" placeholder="Buscar..." [(ngModel)]="terminoBusqueda" (input)="buscar()"/>
+  </div>
+  
+  <!-- Casillas para filtros -->
+  <div>
+    <label>
+      <input type="checkbox" [(ngModel)]="filtros['ropa']" (change)="buscar()"/>
+      Ropa
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="filtros['calzado']" (change)="buscar()"/>
+      Calzado
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="filtros['accesorios']" (change)="buscar()"/>
+      Accesorios
+    </label>
+  </div>
+  
+  <!-- Resultados -->
+  <div *ngFor="let item of resultados">
+    {{ item.nombre }} -
+  </div>
