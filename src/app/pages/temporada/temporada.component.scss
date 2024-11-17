@@ -1,0 +1,21 @@
+.banner{
+    background-image: url("../../../../public/assets/banner.jpg");
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.title{
+    font-family: 'Dancing Script','Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 70px;
+    font-weight: 600;
+}
+h2{
+    text-align: center;
+    background-color: greenyellow;
+}
+.carousel-inner{
+    transition: 1s;
+}
