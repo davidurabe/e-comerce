@@ -4,7 +4,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    flex-direction: column;
 }
 .title{
     font-family: 'Dancing Script','Times New Roman', Times, serif;
