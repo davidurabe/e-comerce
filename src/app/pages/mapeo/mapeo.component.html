@@ -1,9 +1,30 @@
+<!-- obtenerCoordenadas-->
+
 <div class="justify-content-align">
-    <img src="./assets/swain.png" class="mapa" alt="swain" 
+    <img src="./assets/swain.png" class="mapa" alt="swain" usemap="#ropamujer"
     (click)="obtenerCoordenadas($event)"
-    style="cursor: pointer;">
+    >
+    <map name="ropamujer">
+        <area shape="circle" coords="254, 19, 10" alt="Parte 1" 
+        (mouseover)="mostrarInfo($event, 'info1')" href="#" (mouseout)="ocultarInfo('info1')">
+        <area shape="circle" coords="39, 282, 50" href="#" alt="Parte 2"
+        (click)="mostrarInfo($event, 'info2')" style="cursor: pointer;">
+    </map>
 
     <img src="./assets/perfil.jpg" class="mapa" alt="perfil" 
     (click)="obtenerCoordenadas($event)">
 
 </div>
+
+<div id="info1" class="info" style="display: none;">
+    <p>manito juzgadora.</p>
+</div>
+<div id="info2" class="info" style="display: none;">
+    <p>beatriz volvio</p>
+</div>
+  <div id="info3" class="info" style="display: none;">
+    <p>cabeza pensadora</p>
+</div>
+
+
+
