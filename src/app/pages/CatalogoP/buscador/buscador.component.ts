@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-buscador',
   standalone: true,
   imports: [ FormsModule, CommonModule],
   templateUrl: './buscador.component.html',
-  styleUrl: './buscador.component.scss'
+  styleUrl: './buscador.component.scss',
 })
 export class BuscadorComponent {
+  @Output() datosEnviados = new EventEmitter<{ [key: string]: boolean }>();
+  enviarFiltro(categorias: { [key: string]: boolean }){
+    this.datosEnviados.emit(categorias);
+  }
+
   terminoBusqueda: string = ''; // Variable para el término de búsqueda
   elementos = [
     { nombre: 'Camisa', categoria: 'ropa' },
@@ -30,7 +36,7 @@ export class BuscadorComponent {
     let filtrados = this.elementos.filter(item =>
       item.nombre.toLowerCase().includes(this.terminoBusqueda.toLowerCase())
     );
-
+    this.enviarFiltro(this.filtros);
     // Filtra por las casillas seleccionadas si hay al menos una seleccionada
     const filtrosSeleccionados = Object.keys(this.filtros).filter(categoria => this.filtros[categoria]);
     if (filtrosSeleccionados.length > 0) {

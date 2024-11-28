@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './mapeo.component.html',
   styleUrl: './mapeo.component.scss'
 })
-export class MapeoComponent {
+export class MapeoComponent{
+
   mostrarInfo(event: MouseEvent, id:string): void{
     event.preventDefault();
 
